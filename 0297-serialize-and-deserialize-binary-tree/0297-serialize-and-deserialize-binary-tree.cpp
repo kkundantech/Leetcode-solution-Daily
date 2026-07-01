@@ -69,7 +69,7 @@ public:
             q.pop();
 
             if (arr[i] != "null") {
-                TreeNode* left = new TreeNode(stoi(arr[i]));
+                TreeNode* left = new TreeNode(stoi(arr[i])); // stoi convert string into int
                 curr->left = left;
                 q.push(left);
             }
