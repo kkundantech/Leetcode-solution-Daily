@@ -9,7 +9,7 @@ public:
         }else if(!isalnum(s[j])){
             j--;
         }else{
-            if(tolower(s[i]) != tolower(s[j])){
+            if(toupper(s[i]) != toupper(s[j])){
                 return false;
             }
 
