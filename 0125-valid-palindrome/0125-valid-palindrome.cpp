@@ -4,7 +4,7 @@ public:
      int i = 0;
      int j = s.size()-1;
      while(i<j){
-        if(!isalnum(s[i])){ // ch
+        if(!isalnum(s[i])){ // check whether it is character or not.
             i++;
         }else if(!isalnum(s[j])){
             j--;
