@@ -13,11 +13,10 @@ public:
                 return false;
             }
 
-        i++;
-        j--;
-        }
-       
-     }
+            i++;
+            j--;
+        }       
+    }
      return true;   
     }
 };
