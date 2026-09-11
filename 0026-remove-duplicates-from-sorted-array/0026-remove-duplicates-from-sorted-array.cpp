@@ -4,7 +4,7 @@ public:
 
         // we are using here two pinter approach 
        int j = 0; // it will help to arrange the non dulicate element from the aaray;
-       for(int i = 1 ; i < nums.size() ; i++){
+       for(int i = 1 ; i < nums.size() ; i++){ // i is iterating and checkinng either it is duplicate or not
             if(nums[i]  != nums[j]){
                 j++;
                 nums[j] = nums[i];
