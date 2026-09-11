@@ -1,13 +1,15 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        int j = 0;
-        for(int i = 1 ; i < nums.size() ; i++){
-            if(nums[i] != nums[j]){
+
+        // we are using here two pinter approach 
+       int j = 0; // it will help to arrange the non dulicate element from the aaray;
+       for(int i = 1 ; i < nums.size() ; i++){
+            if(nums[i]  != nums[j]){
                 j++;
                 nums[j] = nums[i];
             }
-        }
-        return j+1;
+       }
+       return j+1;
     }
 };
