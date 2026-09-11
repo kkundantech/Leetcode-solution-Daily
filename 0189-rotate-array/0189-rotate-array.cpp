@@ -10,11 +10,18 @@ public:
         //     }
         //     nums[0] = temp;
         // }
-       // optimal sotition 
-       int n = nums.size();
-       k = k % n;
-       reverse(nums.begin() , nums.end());
-       reverse(nums.begin(), nums.begin()+k);
-       reverse(nums.begin()+k , nums.end());
+        
+    //    // optimal sotition 
+    //    int n = nums.size();
+    //    k = k % n;
+    //    reverse(nums.begin() , nums.end());
+    //    reverse(nums.begin(), nums.begin()+k);
+    //    reverse(nums.begin()+k , nums.end());
+    
+    int n = nums.size();
+     k = k%n;
+    reverse(nums.begin() , nums.end());
+    reverse(nums.begin() , nums.begin() + k);
+    reverse(nums.begin() + k , nums.end());
     }
 };
