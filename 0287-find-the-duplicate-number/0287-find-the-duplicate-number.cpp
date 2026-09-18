@@ -14,12 +14,24 @@ public:
 
         // sort + find   O{nlogn}
 
-        sort(nums.begin() , nums.end());
-        for(int i = 0 ; i < n ;i++){
-            if(i > 0 && nums[i] == nums[i-1]){
+        // sort(nums.begin() , nums.end());
+        // for(int i = 0 ; i < n ;i++){
+        //     if(i > 0 && nums[i] == nums[i-1]){
+        //         return nums[i];
+        //     }
+        // }
+        // return 0;
+
+        // using map O{n}
+
+        unordered_map<int, int>mp;
+        for(int i = 0 ; i < n ; i++){
+            if(mp.find(nums[i]) != mp.end()){
                 return nums[i];
             }
+            mp[nums[i]]++;
         }
         return 0;
+
     }
 };
