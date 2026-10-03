@@ -33,12 +33,21 @@ public:
     //     }
     // }
 
-  int j = 0;
-  for(int i = 0 ; i < nums.size() ; i++){
+//   int j = 0;
+//   for(int i = 0 ; i < nums.size() ; i++){
+//     if(nums[i] != 0){
+//         swap(nums[i] , nums[j]);
+//         j++;
+//     }
+//   }
+
+
+int j; //  ye arrange krta hai
+for(int i = 0 ; i < nums.size() ;i++){
     if(nums[i] != 0){
         swap(nums[i] , nums[j]);
         j++;
     }
-  }
 }
+ }
 };
