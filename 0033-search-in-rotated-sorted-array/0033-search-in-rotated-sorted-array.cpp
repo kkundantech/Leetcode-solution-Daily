@@ -3,35 +3,31 @@ public:
     int findPivot(vector<int>& nums) {
         int s = 0;
         int e = nums.size() - 1;
-        int m = s + (e - s) / 2;
-
         while (s <= e) {
-            if (s == e) {
+            
+            if(s == e){
                 return s;
-            }
+             }
 
-            // Case 1: Previous element is greater
-            if (m - 1 >= s && nums[m - 1] > nums[m]) {
-                return m - 1;
-            }
+             int mid = s + (e - s) / 2;
+                // case 1;
+                if((mid - 1 >= s) && (nums[mid-1] > nums[mid])){
+                    return mid-1;
+                }
+                
+                // case 2;
+                if((mid+1 <= e) && (nums[mid + 1] < nums[mid])){
+                    return mid;
+                }
 
-            // Case 2: Current element is greater than next
-            if (m + 1 <= e && nums[m] > nums[m + 1]) {
-                return m;
-            }
+                // now we will itrate the on the Array 
 
-            // Case 3: Pivot lies on the left
-            if (nums[s] > nums[m]) {
-                e = m - 1;
-            } 
-            // Case 4: Pivot lies on the right
-            else {
-                s = m + 1;
-            }
-
-            m = s + (e - s) / 2;
+                if(nums[s] > nums[mid]){
+                    e = mid -1;
+                }else{
+                    s = mid + 1;
+                }
         }
-
         return -1;
     }
 
@@ -54,23 +50,24 @@ public:
     }
 
     int search(vector<int>& nums, int target) {
-        // int pivotIndex = findPivot(nums);
+        int pivotIndex = findPivot(nums);
 
         // Search in the first sorted part
-        // if (target >= nums[0] && target <= nums[pivotIndex]) {
-        //     return binarySearch(nums, 0, pivotIndex, target);
-        // } 
-        // // Search in the second sorted part
-        // else {
-        //     return binarySearch(nums, pivotIndex + 1, nums.size() - 1, target);
-        // }
-
-        for(int i = 0 ; i < nums.size() ;i++){
-            if(nums[i] == target){
-                return i;
-                break;
-            }
+        if (target >= nums[0] && target <= nums[pivotIndex]) {
+            return binarySearch(nums, 0, pivotIndex, target);
+        } 
+        // Search in the second sorted part
+        else {
+            return binarySearch(nums, pivotIndex + 1, nums.size() - 1, target);
         }
-        return -1;
+        
+        // brute force
+        // for(int i = 0 ; i < nums.size() ;i++){
+        //     if(nums[i] == target){
+        //         return i;
+        //         break;
+        //     }
+        // }
+        // return -1;
     }
 };
