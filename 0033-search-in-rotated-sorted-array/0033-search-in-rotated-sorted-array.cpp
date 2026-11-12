@@ -54,15 +54,23 @@ public:
     }
 
     int search(vector<int>& nums, int target) {
-        int pivotIndex = findPivot(nums);
+        // int pivotIndex = findPivot(nums);
 
         // Search in the first sorted part
-        if (target >= nums[0] && target <= nums[pivotIndex]) {
-            return binarySearch(nums, 0, pivotIndex, target);
-        } 
-        // Search in the second sorted part
-        else {
-            return binarySearch(nums, pivotIndex + 1, nums.size() - 1, target);
+        // if (target >= nums[0] && target <= nums[pivotIndex]) {
+        //     return binarySearch(nums, 0, pivotIndex, target);
+        // } 
+        // // Search in the second sorted part
+        // else {
+        //     return binarySearch(nums, pivotIndex + 1, nums.size() - 1, target);
+        // }
+
+        for(int i = 0 ; i < nums.size() ;i++){
+            if(nums[i] == target){
+                return i;
+                break;
+            }
         }
+        return -1;
     }
 };
