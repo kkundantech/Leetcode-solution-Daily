@@ -10,16 +10,16 @@ public:
         // }
         // return mini;
         //  now via Binary Search 
-        int s = 0;
-        int e = nums.size()-1;
-        while(s<e){
-            int mid = s + (e -s)/2;
-            if(nums[mid] > nums[e]){
-                s = mid + 1;
+        int start = 0;
+        int end = nums.size()-1;
+        while(start < end){
+            int mid = start + (end - start)/2;
+            if(nums[mid] > nums[end]){
+                start = mid + 1;
             }else{
-                e = mid;
+                end = mid;
             }
         }
-        return nums[e];
+        return nums[start];
     }
 };
