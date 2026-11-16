@@ -1,8 +1,6 @@
 class Solution {
 public:
     int findMin(vector<int>& nums) {
-
-
         // brute force approach 
         // int mini = INT_MAX;
         // for(int i = 0 ; i < nums.size() ; i++){
@@ -11,7 +9,6 @@ public:
         //     }
         // }
         // return mini;
-
         //  now via Binary Search 
         int s = 0;
         int e = nums.size()-1;
@@ -23,6 +20,6 @@ public:
                 e = mid;
             }
         }
-        return nums[s];
+        return nums[e];
     }
 };
